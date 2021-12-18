@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+use App\Http\Controllers\UserController;
+
 
 Auth::routes();
 
@@ -20,7 +22,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::get('/home', function() {
     return view('home');
 })->name('home')->middleware('auth');
+
+Route::resource('users', UserController::class)->middleware('auth');

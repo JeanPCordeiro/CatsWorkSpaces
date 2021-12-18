@@ -246,7 +246,7 @@ return [
             'text'       => 'Utilisateurs',
             'icon' => 'fas fa-fw fa-user',
             'icon_color' => 'blue',
-            'url'        => '#',
+            'url'        => 'users',
             'can'  => ['admin','write','read'],
         ],
         [
