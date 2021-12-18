@@ -242,37 +242,26 @@ return [
         //    'text' => 'search',
         //],
 
-        ['header' => 'account_settings'],
         [
-            'text'       => 'important',
-            'icon_color' => 'red',
+            'text'       => 'Utilisateurs',
+            'icon' => 'fas fa-fw fa-user',
+            'icon_color' => 'blue',
             'url'        => '#',
+            'can'  => ['admin','write','read'],
         ],
         [
-            'text'       => 'warning',
+            'text'       => 'WorkSpaces',
+            'icon_color' => 'green',
+            'url'        => '#',
+            'icon' => 'fas fa-fw fa-laptop-code',
+            'can'  => ['admin','write'],
+        ],
+        [
+            'text'       => 'Configuration',
             'icon_color' => 'yellow',
             'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
+            'icon' => 'fas fa-fw fa-sliders-h',
+            'can'  => ['admin'],
         ],
     ],
 
