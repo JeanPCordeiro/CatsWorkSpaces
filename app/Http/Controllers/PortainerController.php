@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Portainer;
 use Auth;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Str;
 
 class PortainerController extends Controller
 {
@@ -67,8 +68,16 @@ class PortainerController extends Controller
         $url = $portainer->url.'api/stacks';
         $response = Http::withToken($token)->get($url);
         $stacks = $response->collect();
-        
-        return view('portainers.show',compact('status','stacks'));
+
+        $generator = new \Nubs\RandomNameGenerator\Vgng();
+        $words = str_word_count(strtolower($generator->getName()), 1);
+        $wkname = $words[0].'-';
+        $generator = new \Nubs\RandomNameGenerator\Alliteration();
+        $words = str_word_count(strtolower($generator->getName()), 1);
+        $wkname .= $words[0].'-'.$words[1];
+        $wkname = preg_replace('/[^A-Za-z0-9\-]/', '', $wkname);
+
+        return view('portainers.show',compact('status','stacks','wkname'));
     }
 
     /**

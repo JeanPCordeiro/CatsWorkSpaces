@@ -29,7 +29,8 @@
 
                 <div class="card-body">
 
-                <B>Version Serveur : </B>{{ $status['Version'] }}
+                <B>Version Serveur : </B>{{ $status['Version'] }}<BR>
+                <B>Identifiant : </B>{{ $wkname }}
                 <P>
                 <BR>
                 <B>Liste des WorkSpaces</B>
