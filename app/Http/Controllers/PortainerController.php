@@ -66,10 +66,8 @@ class PortainerController extends Controller
 
         $url = $portainer->url.'api/stacks';
         $response = Http::withToken($token)->get($url);
-        $stacks = $response;
-
-        //return $response;
-
+        $stacks = $response->collect();
+        
         return view('portainers.show',compact('status','stacks'));
     }
 

@@ -29,9 +29,32 @@
 
                 <div class="card-body">
 
-                <B>Version : </B>{{ $status['Version'] }}
+                <B>Version Serveur : </B>{{ $status['Version'] }}
                 <P>
-                {{ $stacks }}
+                <BR>
+                <B>Liste des WorkSpaces</B>
+
+                <table id="mytable" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nom</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($stacks as $stack)
+                            <tr>
+                                <td>{{ $stack['Id'] }}</td>
+                                <td>{{ $stack['Name'] }}</td>
+                                <td>{{ \Carbon\Carbon::parse($stack['CreationDate'])->format('j M Y , g:ia') }}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+
+
+
                 </div>
             </div>
         </div>
