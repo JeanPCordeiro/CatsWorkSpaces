@@ -256,12 +256,27 @@ return [
             'icon' => 'fas fa-fw fa-laptop-code',
             'can'  => ['admin','write'],
         ],
+
         [
-            'text'       => 'Configuration',
+            'text'    => 'Configuration',
+            'icon'    => 'fas fa-fw fa-sliders-h',
             'icon_color' => 'yellow',
-            'url'        => '#',
-            'icon' => 'fas fa-fw fa-sliders-h',
             'can'  => ['admin'],
+            'submenu' => [
+                [
+                    'text'    => 'Portainer',
+                    'icon'    => 'fab fa-docker',
+                    'shift'   => 'ml-3',
+                    'submenu' => [
+                        [
+                            'text'  => 'Serveur',
+                            'url' => 'portainers',
+                            'icon'  => 'fas fa-server',
+                            'shift' => 'ml-4',
+                        ],
+                    ],
+                ],
+            ],
         ],
     ],
 

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\PortainerController;
 
 Auth::routes();
 
@@ -27,3 +27,4 @@ Route::get('/home', function() {
 })->name('home')->middleware('auth');
 
 Route::resource('users', UserController::class)->middleware('auth');
+Route::resource('portainers', PortainerController::class)->middleware('auth');
